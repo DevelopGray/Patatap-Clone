@@ -7,11 +7,23 @@
 	<script type="text/javascript" src="assets/lib/paper-full.min.js"></script>
 	<!-- Define inlined PaperScript associate it with myCanvas -->
 	<script type="text/paperscript" canvas="myCanvas">
-</script>
+		function onKeyDown(event) {
+			// find max view size
+			var maxPoint = new Point(view.size.width, view.size.height);
+			
+			//generate a random number
+			var randomPoint = Point.random();
+
+			// calculate random point
+			var point = maxPoint * randomPoint;
+
+			// make random circle
+			new Path.Circle(point, 50).fillColor = "yellow";
+		}
+	</script>
 </head>
 <body>
 	<canvas id="myCanvas" resize></canvas>
-
-	<script type="text/javascript" src="assets/js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/js/script.js">
 </body>
 </html>
